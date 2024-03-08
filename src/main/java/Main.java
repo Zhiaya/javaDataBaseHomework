@@ -1,5 +1,6 @@
 import com.github.javafaker.Faker;
 import model.Person;
+import model.User;
 import repository.PersonRepository;
 import service.PersonService;
 import utils.TableUtils;
@@ -34,12 +35,16 @@ import java.util.concurrent.ThreadFactory;
 //        );
 
 public class Main {
+    User user = new User();
+
     private static PersonService personService =
             new PersonService(new PersonRepository());
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int option;
+        User user = new User();
+        user.checkUser(input);
         do {
             option = MainView.renderMain(input);
             switch (option) {

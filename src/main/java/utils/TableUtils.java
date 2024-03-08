@@ -79,7 +79,8 @@ public class TableUtils {
     }
 
     public static void renderMenu(List<String> items, String menu) {
-        Table table = new Table(2, BorderStyle.UNICODE_BOX_HEAVY_BORDER,
+        System.setProperty("file.encoding", "UTF-8");
+        Table table = new Table(2, BorderStyle.DESIGN_PAPYRUS,
                 ShownBorders.SURROUND_HEADER_AND_COLUMNS);
         CellStyle centerStyle = new CellStyle(CellStyle.HorizontalAlign.CENTER);
         int counter = 0;
@@ -100,7 +101,7 @@ public class TableUtils {
         String type = data.get(0).getClass().getSimpleName();
         List<String> allColumns = getClassFields(data.get(0));
 //            CellStyle numberStyle = new CellStyle(CellStyle.HorizontalAlign.right);
-        Table table = new Table(allColumns.size(), BorderStyle.UNICODE_BOX_HEAVY_BORDER,
+        Table table = new Table(allColumns.size(), BorderStyle.DESIGN_PAPYRUS,
                 ShownBorders.SURROUND_HEADER_FOOTER_AND_COLUMNS);
         for (String col : allColumns) {
             table.addCell(col);
