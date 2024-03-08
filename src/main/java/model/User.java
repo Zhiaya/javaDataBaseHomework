@@ -21,14 +21,16 @@ public class User {
     }
 
     public User checkUser(Scanner input) {
-        while (true) { // Loop until valid credentials are provided
+        while (true) {
+            System.out.println("==========Welcome Dear User==========");
+            System.out.println("Please Input Information below");
             System.out.println("Enter username: ");
             String username = input.nextLine();
             System.out.println("Enter password: ");
             String password = input.nextLine();
             UserSystemRepository userRepository = new UserSystemRepository();
             if (userRepository.loginUser(username, password)) {
-                return new User(username, password); // Create a User object
+                return new User(username, password); 
             } else {
                 System.out.println("Invalid username or password. Please try again.");
             }

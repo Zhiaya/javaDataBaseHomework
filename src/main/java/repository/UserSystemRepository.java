@@ -78,6 +78,6 @@ public class UserSystemRepository {
             ex.printStackTrace();
         }
 
-        return false; // Default to invalid
+        return false;
     }
 }
